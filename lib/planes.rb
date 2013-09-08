@@ -1,5 +1,5 @@
 class Plane
-	attr_reader :plane
+	attr_accessor :plane
 
 	def initialize grounded = true
 		@plane = [ ]
