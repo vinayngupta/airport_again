@@ -8,3 +8,7 @@ describe Weather do
 	end
 
 end
+
+# line 7 should be read as follows
+# calling forecast on weather should return true if 
+# it includes sunny or stormy
