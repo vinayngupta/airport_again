@@ -8,7 +8,17 @@ describe Airport do
 	end
 
 	it 'will not let planes land if full' do
-		expect(airport.is_full?).to be_true
+		expect{airport.is_full?}.to raise_error("No landing slots, try again")
+	end
+
+	it 'allows take off if sunny and no bomb scare' do
+		bomb = Bomb.new
+		bomb.empty?
+		plane = Plane.new
+		plane.take_off
+		weather = Weather.new
+		weather == "sunny"
+		expect(airport.plane_takes_off).to be_true
 	end
 
 
