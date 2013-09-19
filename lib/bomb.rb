@@ -1,23 +1,21 @@
 class Bomb
-	attr_accessor :bomb
-
-	def initialize
-		@bomb = [ ]
-		@bomb = bomb
+	
+	def initialize active = false
+		@active = active 
 	end
 
-	def empty?
-		bomb.empty?
+	def on?
+		@active
 	end
 
-	def scare_on!
-		bomb = 1
-		#puts "OMG!!!!!!!!!!!!!!!!! We are going to die."
+	def turn_on
+		@active = true
 	end
 
-	def scare_off
-		bomb = 0
-		#puts "Thank god the bomb squad saved us!"
+	def defuse
+		@active = false
 	end
 
 end
+
+

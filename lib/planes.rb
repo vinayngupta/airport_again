@@ -1,16 +1,23 @@
 class Plane
-	attr_accessor :plane
 
-	def initialize grounded = true
-		@plane = [ ]
+	def initialize flying = false
+		@flying = flying
 	end
 
 	def land
-		plane[0] = "grounded" 
+		@flying = false
+		self 
 	end
 
 	def take_off
-		plane[0] = "flying"
+		@flying = true
+		self
+	end
+
+	def flying?
+		@flying
 	end
 
 end
+
+#putting self is important because otherwise nothing to land

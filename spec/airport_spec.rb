@@ -13,12 +13,12 @@ describe Airport do
 
 	it 'allows take off if sunny and no bomb scare' do
 		bomb = Bomb.new
-		bomb.empty?
+		bomb.on?
 		plane = Plane.new
-		plane.take_off
 		weather = Weather.new
-		weather == "sunny"
-		expect(airport.plane_takes_off).to be_true
+		weather.forecast == "sunny"
+		expect(airport.clear_to_take_off(Plane.new)).to be_true
+		expect(plane.take_off).to be_true
 	end
 
 

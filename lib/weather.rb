@@ -1,15 +1,13 @@
 #there is a 50% chance of sunny weather
 
 class Weather
-	attr_accessor :weather
 
-	def initialize sunny = true
-		@weather = weather
+	def initialize
+		@conditions = ["sunny", "stormy"]
 	end
 
 	def forecast
-		weather = ["sunny", "stormy"]
-		weather.sample
+		@conditions.sample
 	end
 
 end
